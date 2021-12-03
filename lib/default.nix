@@ -12,7 +12,7 @@
   nixWallpaperFromScheme = { scheme, width, height, logoScale }:
     "${
       pkgs.stdenv.mkDerivation {
-        name = "generated-nix-wallpaper";
+        name = "generated-nix-wallpaper-${scheme}";
         src = pkgs.writeTextFile {
           name = "template.svg";
           text = ''
@@ -55,7 +55,7 @@
   # };
   colorschemeFromPicture = { path, kind }:
     import (pkgs.stdenv.mkDerivation {
-      name = "generated-colorscheme";
+      name = "generated-colorscheme-${baseNameOf path}-${kind}";
       buildInputs = with pkgs; [ flavours ];
       unpackPhase = "true";
       buildPhase = ''
