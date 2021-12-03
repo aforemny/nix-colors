@@ -54,6 +54,9 @@
 
   colors = import ./colors/colors.nix;
 
+  crystal-light = import ./crystal/crystal-light.nix;
+  crystal-dark = import ./crystal/crystal-dark.nix;
+
   cupertino = import ./cupertino/cupertino.nix;
 
   da-one-black = import ./da-one/da-one-black.nix;
