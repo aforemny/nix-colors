@@ -41,4 +41,20 @@
   #   }
   # ];
   vimThemeFromScheme = import ./vim-theme.nix { inherit pkgs; };
+
+  # Takes a scheme, ouputs a xresources theme.
+  #
+  # Example:
+  # xresources.extraConfig = builtins.readFile (xresourcesThemeFromScheme {
+  #   scheme = config.colorscheme;
+  # });
+  xresourcesThemeFromScheme = import ./xresources-theme.nix { inherit pkgs; };
+
+  # Takes a scheme, ouputs a xresources 256 theme.
+  #
+  # Example:
+  # xresources.extraConfig = builtins.readFile (xresources256ThemeFromScheme {
+  #   scheme = config.colorscheme;
+  # });
+  xresources256ThemeFromScheme = import ./xresources-256-theme.nix { inherit pkgs; };
 }
