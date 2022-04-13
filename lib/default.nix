@@ -37,7 +37,7 @@
   # programs.vim.plugins = [
   #   {
   #     plugin = vimThemeFromScheme { scheme = config.colorscheme; };
-  #     config = "colorscheme ${config.colorscheme.slug}";
+  #     config = "colorscheme nix-${config.colorscheme.slug}";
   #   }
   # ];
   vimThemeFromScheme = import ./vim-theme.nix { inherit pkgs; };
